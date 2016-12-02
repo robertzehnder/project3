@@ -3,7 +3,7 @@ angular.module("cars")
 
 
 function Callback($resource){
-  return $resource("/cars/:id", {}, {
+  return $resource("localhost:3000/cars/:id", {}, {
       update: { method: "PUT"}
   })
 }
