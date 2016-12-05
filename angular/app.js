@@ -10,18 +10,11 @@ function indexControllerFunction($state, Car) {
   this.cars.$promise.then((data)=>{
     console.log(data)
   })
-  console.log(this.cars)
+  console.log(this.cars.photo)
+
 }
 
-// function indexControllerFunction($state, Post){
-//   this.posts = Post.query()
-//   this.newPost = new Post()
-//   this.create = function(){
-//     this.newPost.$save().then((post) => {
-//       $state.go("show", { _id: post._id})
-//     })
-//   }
-// }
+
 
 function Callback($resource){
   return $resource("http://localhost:3000/cars/:id", {}, {
