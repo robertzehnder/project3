@@ -32,3 +32,9 @@ Day 1 Goals
 - Angular Setup
   - Create Index page
 
+Day 2 Goals
+---
+- CSS prototype
+  -(nice squares)
+- show page
+- CRUD
