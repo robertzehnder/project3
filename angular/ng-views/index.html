@@ -1,11 +1,19 @@
 
 <div data-ng-controller="indexController as vm">
   <div data-ng-repeat="car in vm.cars">
-    <!-- <div data-ng-repeat="photo in vm.cars.photos"> -->
 
     <p>{{car.make}}</p>
+    <div data-ng-repeat="photo in vm.photos">
+<div ng-if="car.id == photo.car_id">
 
-    {{photo.photoUrl}}
+  <img src="{{photo.photoUrl}}">
+    </div>
   </div>
+
+
+
+    <!-- <img src="https://invimg.autofunds.com/InventoryImages/2016/06/14/1988_859471_17182443_1223714022016.jpg" alt="placeholder" /> -->
   </div>
+
+
 </div>
