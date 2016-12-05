@@ -2,9 +2,7 @@ class CarsController < ApplicationController
 
   def index
     @cars = Car.all
-    @photos = Photo.all
-    render json: @cars
-
+    render :json => @cars.to_json(:include => :photos) 
   end
 
   def show
