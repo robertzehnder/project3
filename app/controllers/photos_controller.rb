@@ -11,10 +11,8 @@ class PhotosController < ApplicationController
   end
 
   def create
-    # @car = Car.find(params[:id])
-    # @photo = @car.photos.build
     @photo = Photo.new(photo_params)
-
+    puts @photo.inspect
     if @photo.save
       render json: @photo.to_json, status: :created
     else

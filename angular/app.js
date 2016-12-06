@@ -1,6 +1,6 @@
 angular.module("cars", ["ngResource", "ui.router"])
   .controller("indexController", ["$state", "Car", "Photo", indexControllerFunction])
-  .controller("showController", ["$state", "$stateParams", "Car", "Photo", showControllerFunction])
+  .controller("showController", ["$window", "$state", "$stateParams", "Car", "Photo", showControllerFunction])
   .config(["$stateProvider", Router])
   .factory("Car", ["$resource", Callback])
   .factory("Photo", ["$resource", photoFactory])
@@ -11,13 +11,15 @@ function indexControllerFunction($state, Car, Photo) {
   this.photos = Photo.query()
 }
 
-function showControllerFunction($state, $stateParams, Car, Photo) {
+function showControllerFunction($window, $state, $stateParams, Car, Photo) {
   this.car = Car.get({id: $stateParams.id})
-  this.photos = Photo.query()
-  this.newPhoto = new Photo();
+    this.photos = Photo.query()
+    this.newPhoto = new Photo();
+    // this.newPhoto.car_id = $stateParams.id
   this.create = function(){
-    this.newPhoto.$save().then(function(car){
-      $state.go("show", { id: $stateParams.id})
+    this.newPhoto.$save().then(function(photo){
+      console.log(photo.car_id);
+      $state.go("show", {id: photo.car_id})
     })
   }
 }
