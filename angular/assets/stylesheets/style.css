@@ -1,12 +1,16 @@
-
-
+h1 {
+  text-align: center;
+}
 
 .parent {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-
+}
+.child {
+  max-width: 350px;
+  max-height: 300px;
 }
 
 img {
@@ -14,16 +18,24 @@ img {
   height: 300px;
 }
 
-.child {
-  max-width: 350px;
-  max-height: 300px;
-
+.childShow img {
+  width: 450px;
+  height: 450px;
 }
 
+.parentShow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
+.childShow {
+  max-width: 500px;
+  max-height: 500px;
+}
 
 body {
-
   padding-top: 70px;
 
 }
