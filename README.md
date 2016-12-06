@@ -38,3 +38,8 @@ Day 2 Goals
   -(nice squares)
 - show page
 - CRUD
+
+Day 3 Goals
+---
+- CRUD for real
+- fix up bootstrap
