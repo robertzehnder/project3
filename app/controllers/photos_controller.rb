@@ -7,18 +7,31 @@ class PhotosController < ApplicationController
 
   end
 
+  def show
+    @photo = Photo.find(params[:id])
+    render json: @photo
+  end
+  
   def new
   end
 
   def create
     @photo = Photo.new(photo_params)
-    puts @photo.inspect
-    if @photo.save
-      render json: @photo.to_json, status: :created
-    else
-      render json: @photo.errors, status: :unprocessable_entity
-    end
-  end
+    puts "pre-save: #{@photo.inspect}"
+   if @photo.save
+     puts "success: #{@photo.inspect}"
+     render json: @photo.to_json, status: :created
+   else
+     puts "failure: #{@photo.inspect}"
+     render json: @photo.errors, status: :unprocessable_entity
+   end
+ end
+
+ def destroy
+   @photo = Photo.find(params[:id])
+    @photo.destroy
+    render json: {message: "success"}, status: :ok
+ end
 
 private
   def photo_params

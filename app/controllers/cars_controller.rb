@@ -1,4 +1,6 @@
 class CarsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
 
   def index
     @cars = Car.all
@@ -10,6 +12,10 @@ class CarsController < ApplicationController
     render json: @car.to_json(:include => :photos)
   end
 
-
+  def destroy
+    @car = Car.find(params[:id])
+     @car.destroy
+     render json: {message: "success"}, status: :ok
+  end
 
 end
