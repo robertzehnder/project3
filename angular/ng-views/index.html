@@ -1,11 +1,9 @@
 
-<div class="container" data-ng-controller="indexController as vm">
-  <div class="item" data-ng-repeat="car in vm.cars">
+<div class="parent" data-ng-controller="indexController as vm">
+  <div class="child" data-ng-repeat="car in vm.cars">
 
-    <a data-ui-sref="show({id: car.id})"><h2>{{car.make}}</h2></a>
-    <img src="{{car.photos[0].photoUrl}}" height="250" width="400">
+    <!-- <a data-ui-sref="show({id: car.id})"><h2>{{car.make}}</h2></a> -->
+    <img src="{{car.photos[0].photoUrl}}">
     </div>
   </div>
     <!-- <img src="https://invimg.autofunds.com/InventoryImages/2016/06/14/1988_859471_17182443_1223714022016.jpg" alt="placeholder" /> -->
-  </div>
-</div>
