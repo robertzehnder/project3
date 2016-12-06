@@ -1,11 +1,9 @@
 
-<div class="cars" data-ng-controller="indexController as vm">
+<div data-ng-controller="indexController as vm">
   <div data-ng-repeat="car in vm.cars">
 
     <a data-ui-sref="show({id: car.id})"><h2>{{car.make}}</h2></a>
-
-
-<img src="{{car.photos[0].photoUrl}}">
+    <img src="{{car.photos[0].photoUrl}}">
     </div>
   </div>
 
