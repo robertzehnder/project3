@@ -8,19 +8,25 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .child {
   max-width: 350px;
   max-height: 300px;
 }
 
-img {
-  width: 300px;
-  height: 300px;
+.carousel-inner > .item > img {
+  height: 500px;
+  width: 750px;
+  margin: 0 auto;
+  /*border: 3px solid black;*/
 }
 
-.childShow img {
-  width: 450px;
-  height: 450px;
+.carousel-inner {
+  height: 500px;
+}
+
+.carousel-indicators {
+  padding-bottom: 10px;
 }
 
 .parentShow {
@@ -36,7 +42,7 @@ img {
 }
 
 body {
-  padding-top: 70px;
+  padding-top: 50px;
 
 }
 
