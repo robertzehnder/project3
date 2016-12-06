@@ -1,3 +1,33 @@
+
+
+
+.parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+img {
+  width: 300px;
+  height: 300px;
+}
+
+.child {
+  max-width: 350px;
+  max-height: 300px;
+
+}
+
+
+
 body {
-  background-color: blue;
+
+  padding-top: 70px;
+
+}
+
+.hide {
+  display: none;
 }
