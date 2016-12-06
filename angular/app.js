@@ -24,7 +24,6 @@ function showControllerFunction($window, $state, $stateParams, Car, Photo) {
   }
 }
 
-
 function photoFactory($resource){
   return $resource("http://localhost:3000/photos", {}, {
       update: { method: "PUT"}
@@ -39,6 +38,12 @@ function Callback($resource){
 
 function Router($stateProvider) {
   $stateProvider
+  .state("welcome", {
+    url: "/welcome",
+    templateUrl: "./ng-views/welcome.html",
+    controller: "indexController", //This is correct because it will use the same structure as the index page
+    controllerAs: "vm"
+  })
   .state("index", {
     url: "/cars",
     templateUrl: "./ng-views/index.html",
