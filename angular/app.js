@@ -1,3 +1,4 @@
+
 angular.module("cars", ["ngResource", "ui.router"])
   .controller("indexController", ["$state", "Car", "Photo", indexControllerFunction])
   .controller("showController", ["$state", "$stateParams", "Car", "Photo", showControllerFunction])
