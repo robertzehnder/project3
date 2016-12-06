@@ -22,16 +22,24 @@ function showControllerFunction($state, $stateParams, Car, Photo) {
   this.car = Car.get({id: $stateParams.id})
     this.photos = this.car.photos
     this.newPhoto = new Photo();
+    this.photo = new Photo();
+    this.photo.color = "hardcoded red"
     this.create = function(){
     this.newPhoto.$save().then(function(photo){
       $state.go("show", {id: photo.car_id}, {reload: true})
     })
   }
     this.update = function(){
-      this.car.$update({name: $stateParams.name}).then(function(car){
-      $state.go("show", { id: car.id})
+      this.photo.$update({id: $stateParams.id}).then(function(photo){
+      $state.go("show", { id: photo.id})
     })
   }
+    this.editPhoto = function(photo){
+      this.photo = photo
+      //factory get the photo instead of the line above
+      console.log(this.photo);
+    }
+
     this.destroy = function(photo){
       this.photo = Photo.get({id: photo.id})
       this.photo.$promise.then(() => {

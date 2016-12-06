@@ -6,7 +6,8 @@
   <div ng-repeat="photo in vm.car.photos">
     <img src="{{photo.photoUrl}}" alt="{{photo.year}}" />
     {{photo.year}}
-    <button ng-click="vm.destroy(photo)">
+    <button ng-click="vm.destroy(photo)">delete</button>
+      <button ng-click="vm.editPhoto(photo)" name="button">edit</button>
   </div>
   </div>
 
@@ -15,14 +16,14 @@
    <input type="text" ng-model="vm.newPhoto.photoUrl" placeholder="photoUrl" />
    <input type="text" ng-model="vm.newPhoto.color" placeholder="color" />
    <input type="number" ng-model="vm.newPhoto.year" placeholder="year" />
-   <input type="text" ng-model="vm.newPhoto.car_id" placeholder="{{vm.car.id}}" />
+   <input type="hidden" ng-model="vm.newPhoto.car_id" value="{{vm.car.id}}" />
    <button type="submit">submit new photo</button>
  </form>
  <button ng-click="vm.destroyCar()" name="delete this car">delete this car</button>
 
  <div>
-   <input type="text" ng-model="vm.photo.photoUrl" placeholder="photoUrl" />
-   <input type="text" ng-model="vm.photo.color" placeholder="color" />
+   <input type="text" ng-model="vm.photo.photoUrl" value="vm.photo.photoUrl" placeholder="photoUrl" />
+   <input type="text" ng-model="vm.photo.color" value="vm.photo.color" placeholder="color" />
    <input type="number" ng-model="vm.photo.year" placeholder="year" />
    <input type="text" ng-model="vm.photo.car_id" placeholder="{{vm.car.id}}" />
    <button ng-click="vm.update()">edit</button>
