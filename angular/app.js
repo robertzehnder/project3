@@ -21,23 +21,43 @@ function indexControllerFunction($state, Car, Photo) {
 function showControllerFunction($state, $stateParams, Car, Photo) {
   this.car = Car.get({id: $stateParams.id})
     this.photos = this.car.photos
-    this.newPhoto = new Photo();
-    this.photo = new Photo();
-    this.photo.color = "hardcoded red"
+    // this.photos = this.car.photos.map((photoFromCar) => {
+    //   let photo = new Photo()
+    //   photo.someProp = photoFromCar.someProp
+    //   photo.someProp = photoFromCar.someProp
+    //   photo.someProp = photoFromCar.someProp
+    //   return photo
+    // })
+    this.newPhoto = new Photo({car_id: $stateParams.id});
     this.create = function(){
     this.newPhoto.$save().then(function(photo){
       $state.go("show", {id: photo.car_id}, {reload: true})
     })
   }
-    this.update = function(){
-      this.photo.$update({id: $stateParams.id}).then(function(photo){
-      $state.go("show", { id: photo.id})
-    })
-  }
-    this.editPhoto = function(photo){
-      this.photo = photo
+  //   this.update = function(photo){
+  //     this.photo = Photo.get({id: photo.id})
+  //     this.photo.$promise.then(() => {
+  //     this.photo.$update({id: photo.id}).then(function(photo){
+  //     $state.go("show", { id: photo.car_id})
+  //   })
+  //   })
+  // }
+    this.update = function(photox){
+      console.log(photox);
+      let photoToEdit = Photo.get({id: photox.id}, function() {
+        photoToEdit.$save({ id: photoToEdit.id})
+      })
+//{photoUrl: photox.photoUrl, year: photox.year, color: photox.color, id: photox.id}
+
+      //   this.photoToEdit.$save().then(function(photoEditPromise){
+      //     console.log("hit the update");
+      //     $state.go("show", { id: photoEditPromise.car_id})
+      // })
+
+
+
+      // this.photo = photo
       //factory get the photo instead of the line above
-      console.log(this.photo);
     }
 
     this.destroy = function(photo){
@@ -60,8 +80,6 @@ function showControllerFunction($state, $stateParams, Car, Photo) {
 }
 
 
-
-
 function photoFactory($resource){
   return $resource("http://localhost:3000/photos/:id", {}, {
       update: { method: "PUT"}
@@ -79,7 +97,7 @@ function Router($stateProvider) {
   .state("welcome", {
     url: "/welcome",
     templateUrl: "./ng-views/welcome.html",
-    controller: "indexController", 
+    controller: "indexController",
     controllerAs: "vm"
   })
   .state("index", {

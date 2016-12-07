@@ -16,6 +16,7 @@ img {
   width: 100%;
 }
 /* ------Index-------*/
+
 .parent {
   display: flex;
   flex-direction: row;
@@ -30,6 +31,7 @@ img {
 /* ------Show-------*/
 #showCarousel > .carousel-inner {
   height: 400px;
+
 }
 
 #showCarousel > .carousel-inner > .item > img {
