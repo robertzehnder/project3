@@ -9,6 +9,15 @@
   </ol> -->
   <div class="carousel-inner" role="listbox">
     <div class="item" ng-class="{active:!$index}" ng-repeat="photo in vm.car.photos">
+      <div class="edit-form" >
+        <form>
+          <input type="text" ng-model="photo.photoUrl" placeholder="holyguacamolephotoUrl" />
+          <input type="text" ng-model="photo.color" placeholder="color" />
+          <input type="number" ng-model="photo.year" placeholder="year" />
+          <button ng-click="vm.update(photo)">edit</button>
+          <button ng-click="vm.destroy(photo)">delete</button>
+        </form>
+      </div>
       <img src="{{photo.photoUrl}}" alt="{{photo.year}}" class="img-responsive"/>
         <div class="carousel-caption">
           <h3>{{photo.year}}</h3>
@@ -112,13 +121,3 @@
 
 </fieldset>
 </form>
-
-
-<div class="edit-form" >
-  <form>
-    <input type="text" ng-model="photo.photoUrl" placeholder="holyguacamolephotoUrl" />
-    <input type="text" ng-model="photo.color" placeholder="color" />
-    <input type="number" ng-model="photo.year" placeholder="year" />
-    <input type="text" ng-model="photo.car_id" placeholder="{{vm.car.id}}" />
-    <button ng-click="vm.update(photo)">edit</button>
-    <button ng-click="vm.destroy(photo)">delete</button>
