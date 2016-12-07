@@ -29,7 +29,6 @@ class PhotosController < ApplicationController
 
  def update
    @photo = Photo.find(params[:id])
-   puts "hey did this do anything********************"
     if @photo.update(photo_params)
       render json: @photo.to_json, status: :ok
     else
@@ -45,7 +44,7 @@ class PhotosController < ApplicationController
 
 private
   def photo_params
-      params.require(:photo).permit(:id, :photoUrl, :color, :year, :car_id, :created_at, :updated_at)
+      params.require(:photo).permit(:photoUrl, :color, :year, :car_id)
     end
 
 end
