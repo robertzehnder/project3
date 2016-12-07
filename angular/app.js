@@ -79,7 +79,7 @@ function Router($stateProvider) {
   .state("welcome", {
     url: "/welcome",
     templateUrl: "./ng-views/welcome.html",
-    controller: "indexController", //This is correct because it will use the same structure as the index page
+    controller: "indexController", 
     controllerAs: "vm"
   })
   .state("index", {

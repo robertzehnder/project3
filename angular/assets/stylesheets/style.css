@@ -1,7 +1,21 @@
+body {
+  padding-top: 50px;
+}
+
 h1 {
   text-align: center;
 }
 
+.carousel-caption > h3 {
+  color: white;
+  text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+/* ------Index-------*/
 .parent {
   display: flex;
   flex-direction: row;
@@ -10,42 +24,54 @@ h1 {
 }
 
 .child {
-  max-width: 350px;
-  max-height: 300px;
+  max-width: 400px;
+  max-height: 270px;
+}
+/* ------Show-------*/
+#showCarousel > .carousel-inner {
+  height: 400px;
 }
 
-.carousel-inner > .item > img {
+#showCarousel > .carousel-inner > .item > img {
+  height: 400px;
+  width: 600px;
+  margin: 0 auto;
+}
+/* ------Welcome---*/
+#carCarousel > .carousel-inner > .item > img {
   height: 500px;
   width: 750px;
   margin: 0 auto;
-  /*border: 3px solid black;*/
 }
 
-.carousel-inner {
+#carCarousel > .carousel-inner {
   height: 500px;
 }
 
-.carousel-indicators {
-  padding-bottom: 10px;
+#carCarousel >.carousel-indicators {
+  padding-bottom: 15px;
 }
 
-.parentShow {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+.carousel-indicators li {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  margin: 10px;
+  text-indent: 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  background-color: #0000ff;
+  box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.5);
 }
 
-.childShow {
-  max-width: 500px;
-  max-height: 500px;
+.carousel-indicators .active {
+  width: 48px;
+  height: 48px;
+  margin: 10px;
+  background-color: #ffff99;
 }
-
-body {
-  padding-top: 50px;
-
-}
-
+/*-----------*/
 .hide {
   display: none;
 }
