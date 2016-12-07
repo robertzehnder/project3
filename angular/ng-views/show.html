@@ -6,9 +6,44 @@
   <div ng-repeat="photo in vm.car.photos">
     <img src="{{photo.photoUrl}}" alt="{{photo.year}}" />
     {{photo.year}}
-    <button ng-click="vm.destroy(photo)">delete</button>
-      <button ng-click="vm.editPhoto(photo)" name="button">edit</button>
+    <!-- <button ng-click="vm.update(photo)" name="button">showedit</button> -->
+      <!-- <button ng-click="vm.editPhoto(photo)" name="button">edit</button> -->
+      <!-- <div ng-show="vm.update = !vm.update"> -->
+        <!-- <form ng-submit="vm.update(photo)">
+        <input type="text" ng-model="vm.photo.photoUrl" value="{{photo.photoUrl}}" />
+        <input type="text" ng-model="vm.photo.color" placeholder="color" />
+        <input type="number" ng-model="vm.photo.year" placeholder="year" />
+        <input type="text" ng-model="vm.photo.car_id" placeholder="{{vm.car.id}}" />
+        <button type="submit">thisedit</button>
+        </form>
+      </div>
   </div>
+
+  /// -->
+  <!-- <button type="button" data-ng-if="!song.showEdit" data-ng-click="SongsIndexViewModel.toggleEdit(song)">Edit</button>
+      <button type="button" data-ng-if="song.showEdit" data-ng-click="SongsIndexViewModel.toggleEdit(song)">Cancel Edit</button> -->
+      <!-- Edit Form  -->
+      <div class="edit-form" > <!--data-ng-show="song.showEdit"-->
+        <form>
+          <input type="text" ng-model="photo.photoUrl" placeholder="holyguacamolephotoUrl" />
+          <input type="text" ng-model="photo.color" placeholder="color" />
+          <input type="number" ng-model="photo.year" placeholder="year" />
+          <input type="text" ng-model="photo.car_id" placeholder="{{vm.car.id}}" />
+          <button ng-click="vm.update(photo)">edit</button>
+          <button ng-click="vm.destroy(photo)">delete</button>
+          <!--  -->
+          <!-- <input placeholder="Title" data-ng-model="song.title">
+          <input placeholder="Audio Url" data-ng-model="song.audio_url">
+          <input placeholder="Album Art" data-ng-model="song.album_art">
+          <input placeholder="Artist" data-ng-model="song.artist">
+          <input placeholder="Genre" data-ng-model="song.genre">
+          <button type="button" data-ng-click="SongsIndexViewModel.update(song)">Update</button>
+          <button type="button" data-ng-click="SongsIndexViewModel.destroy(song)">Delete</button> -->
+        </form>
+        <!-- <button ng-click="vm.editPhoto(photo)" name="button">edit</button> -->
+    </div>
+
+
 
   </div>
   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -64,13 +99,13 @@
  </div>
 
  <!-- Text input-->
- <div class="form-group">
+ <!-- <div class="form-group">
    <label class="col-md-4 control-label" for="textinput">Enter Car ID:</label>
    <div class="col-md-4">
    <input id="textinput" name="textinput" type="text" ng-model="vm.newPhoto.car_id" placeholder="{{vm.car.id}}" class="form-control input-md">
 
    </div>
- </div>
+ </div> -->
 
  <!-- Textarea -->
  <div class="form-group">
@@ -92,11 +127,3 @@
  </fieldset>
  </form>
  <button ng-click="vm.destroyCar()" name="delete this car">delete this car</button>
-
- <div>
-   <input type="text" ng-model="vm.photo.photoUrl" value="vm.photo.photoUrl" placeholder="photoUrl" />
-   <input type="text" ng-model="vm.photo.color" value="vm.photo.color" placeholder="color" />
-   <input type="number" ng-model="vm.photo.year" placeholder="year" />
-   <input type="text" ng-model="vm.photo.car_id" placeholder="{{vm.car.id}}" />
-   <button ng-click="vm.update()">edit</button>
- </div>

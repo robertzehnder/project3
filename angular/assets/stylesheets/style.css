@@ -2,6 +2,11 @@ h1 {
   text-align: center;
 }
 
+img {
+  max-width: 500px;
+  max-height: 500px;
+}
+
 .parent {
   display: flex;
   flex-direction: row;
@@ -12,6 +17,7 @@ h1 {
 .child {
   max-width: 350px;
   max-height: 300px;
+
 }
 
 .carousel-inner > .item > img {

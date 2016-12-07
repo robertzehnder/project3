@@ -11,7 +11,7 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     render json: @photo
   end
-  
+
   def new
   end
 
@@ -25,6 +25,15 @@ class PhotosController < ApplicationController
      puts "failure: #{@photo.inspect}"
      render json: @photo.errors, status: :unprocessable_entity
    end
+ end
+
+ def update
+   @photo = Photo.find(params[:id])
+    if @photo.update(photo_params)
+      render json: @photo.to_json, status: :ok
+    else
+      render json: @photo.errors, status: :unprocessable_entity
+    end
  end
 
  def destroy
