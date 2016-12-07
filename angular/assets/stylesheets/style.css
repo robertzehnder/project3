@@ -1,6 +1,4 @@
-body {
-  padding-top: 50px;
-}
+
 
 h1 {
   text-align: center;
@@ -15,7 +13,43 @@ img {
   height: 100%;
   width: 100%;
 }
+/*.navbar-right {
+  display: inline-block;
+}
+.form-group {
+  display: inline-block;
+}*/
 /* ------Index-------*/
+
+nav {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .parent {
+    margin-top: 250px;
+  }
+}
+
+@media (min-width: 768px) {
+  .parent {
+    margin-top: 50px;
+  }
+}
+
+.imgDescription {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(29, 106, 154, 0.72);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+
+  height: 100%;
+}
 
 .parent {
   display: flex;
@@ -25,7 +59,14 @@ img {
 
 .child {
   width: 33.33%;
-  max-height: 270px;
+  height: auto;
+  position: relative;
+
+}
+
+.child:hover .imgDescription {
+  visibility: visible;
+  opacity: 1;
 }
 /* ------Show-------*/
 #showCarousel > .carousel-inner {
