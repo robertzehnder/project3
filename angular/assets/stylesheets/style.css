@@ -21,11 +21,10 @@ img {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .child {
-  max-width: 400px;
+  width: 33.33%;
   max-height: 270px;
 }
 /* ------Show-------*/
