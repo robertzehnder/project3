@@ -42,23 +42,17 @@ function showControllerFunction($state, $stateParams, Car, Photo) {
   //   })
   //   })
   // }
-    this.update = function(photox){
-      console.log(photox);
-      let photoToEdit = Photo.get({id: photox.id}, function() {
-        photoToEdit.$save({ id: photoToEdit.id})
-      })
-//{photoUrl: photox.photoUrl, year: photox.year, color: photox.color, id: photox.id}
+    this.update = function(photo){
+      let photoToEdit = Photo.get({id: photo.id})
+      photoToEdit.$promise.then(() => {
+        photoToEdit.photoUrl = photo.photoUrl
+        photoToEdit.color = photo.color
+        photoToEdit.year = photo.year
+        photoToEdit.$update(photo).then(function(){
+        })
+        })
+      }
 
-      //   this.photoToEdit.$save().then(function(photoEditPromise){
-      //     console.log("hit the update");
-      //     $state.go("show", { id: photoEditPromise.car_id})
-      // })
-
-
-
-      // this.photo = photo
-      //factory get the photo instead of the line above
-    }
 
     this.destroy = function(photo){
       this.photo = Photo.get({id: photo.id})
