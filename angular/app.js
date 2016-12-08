@@ -43,6 +43,7 @@ function showControllerFunction($state, $stateParams, Car, Photo) {
   //   })
   // }
     this.update = function(photo){
+      photo.showEdit = !photo.showEdit
       let photoToEdit = Photo.get({id: photo.id})
       photoToEdit.$promise.then(() => {
         photoToEdit.photoUrl = photo.photoUrl
@@ -53,7 +54,6 @@ function showControllerFunction($state, $stateParams, Car, Photo) {
         })
       }
 
-
     this.destroy = function(photo){
       this.photo = Photo.get({id: photo.id})
       this.photo.$promise.then(() => {
@@ -62,15 +62,18 @@ function showControllerFunction($state, $stateParams, Car, Photo) {
           $state.go("show", {id: id}, {reload: true})
         })
       })
-      }
-      this.destroyCar = function(){
-        console.log(this.car);
-        this.car.$promise.then(() => {
-          this.car.$delete({id: this.car.id}).then(function(){
-            $state.go("index")
-          })
+    }
+    this.destroyCar = function(){
+      console.log(this.car);
+      this.car.$promise.then(() => {
+        this.car.$delete({id: this.car.id}).then(function(){
+          $state.go("index")
         })
-        }
+      })
+    }
+    this.toggleEdit = function (photo) {
+      photo.showEdit = !photo.showEdit
+    }
 }
 
 
