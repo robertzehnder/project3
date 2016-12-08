@@ -43,6 +43,7 @@ function showControllerFunction($state, $stateParams, Car, Photo) {
   //   })
   // }
     this.update = function(photo){
+      photo.showEdit = !photo.showEdit
       let photoToEdit = Photo.get({id: photo.id})
       photoToEdit.$promise.then(() => {
         photoToEdit.photoUrl = photo.photoUrl
