@@ -1,6 +1,6 @@
 
 <div class="parent" data-ng-controller="indexController as vm">
-  <div class="child" data-ng-repeat="car in vm.cars | filter: {make: $ctrl.query}">
+  <div class="child phone-list-item" data-ng-repeat="car in vm.cars | filter: {make: $ctrl.query}">
 
     <a data-ui-sref="show({id: car.id})"><img src="{{car.photos[0].photoUrl}}"></a>
 
