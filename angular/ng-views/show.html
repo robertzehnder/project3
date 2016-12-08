@@ -8,19 +8,21 @@
   <div class="carousel-inner" role="listbox">
     <div class="item" ng-class="{active:!$index}" ng-repeat="photo in vm.car.photos">
       <div class="edit-form" >
-        <form>
-          <input type="text" ng-model="photo.photoUrl" placeholder="holyguacamolephotoUrl" />
-          <input type="text" ng-model="photo.color" placeholder="color" />
-          <input type="number" ng-model="photo.year" placeholder="year" />
-          <button ng-click="vm.update(photo)">edit</button>
-          <button ng-click="vm.destroy(photo)">delete</button>
-        </form>
+
       </div>
       <img src="{{photo.photoUrl}}" alt="{{photo.year}}" class="img-responsive"/>
         <div class="carousel-caption">
           <h3>{{photo.year}}</h3>
           <!-- <button id="singlebutton" ng-click="vm.editPhoto(photo)" name="button">Edit Entry</button> -->
           <button id="singlebutton" class="btn btn-primary" ng-click="vm.destroy(photo)">Delete Entry</button>
+          <button type="button" data-ng-click="vm.toggleEdit(photo)">edit</button>
+          <form data-ng-show="photo.showEdit">
+            <input class="blacktext" type="text" ng-model="photo.photoUrl" /><br>
+            <input class="blacktext" type="text" ng-model="photo.color"  /><br>
+            <input class="blacktext" type="number" ng-model="photo.year" /><br>
+            <button ng-click="vm.update(photo)">confirm</button>
+            <!-- <button ng-click="vm.destroy(photo)">delete</button> -->
+          </form>
         </div>
     </div>
   <a class="left carousel-control" href="#showCarousel" role="button" data-slide="prev">

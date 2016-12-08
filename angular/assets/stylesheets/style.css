@@ -9,6 +9,10 @@ h1 {
   text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
 }
 
+.blacktext {
+  color: black;
+}
+
 img {
   height: 100%;
   width: 100%;
@@ -79,9 +83,10 @@ button:active {
 	top:1px;
 }
 
-.edit-form {
+/*.edit-form {
   margin-top: 50px;
-}
+
+}*/
 
 .imgDescription {
   position: absolute;
