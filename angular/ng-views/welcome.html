@@ -1,6 +1,29 @@
-<video-background source="{
-  mp4: './assets/videos/2ndLamboVid.mp4'
-}" autoplay on-firstplay></video-background>
+<div class="container">
+  <video-background class="shablam" source="{
+    mp4: './assets/videos/2ndLamboVid.mp4'
+  }" autoplay width="100%" height="auto"></video-background>
+  <div class="overlay"><button data-ui-sref="index()" type="button" name="button">Enter</button></div>
+</div>
+
+
+
+<!-- Surely you are looking for more than this:
+
+<div class="container">
+  <video id="video" width="770" height="882" onclick="play();">
+      <source src="video/Motion.mp4" type="video/mp4" />
+  </video>
+  <div class="overlay">
+      <p>Content above your video</p>
+      <form>
+          <p>Content Below Your Video</p>
+          <label for="input">Form Input Label</label>
+          <input id="input" name="input" value="" />
+          <button type="submit">Submit</button>
+      </form>
+  </div>
+</div> -->
+
 
 <!-- <div id="carCarousel" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
