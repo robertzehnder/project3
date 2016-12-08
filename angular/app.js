@@ -1,5 +1,5 @@
 
-angular.module("cars", ["ngAnimate", "ngResource", "ui.router"])
+angular.module("cars", ["video-background", "ngAnimate", "ngResource", "ui.router"])
   .controller("indexController", ["$state", "Car", "Photo", indexControllerFunction])
   .controller("showController", ["$state", "$stateParams", "Car", "Photo", showControllerFunction])
   .config(["$stateProvider", Router])
