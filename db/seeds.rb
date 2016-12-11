@@ -57,8 +57,8 @@ photo23 = Photo.create(photoUrl: "http://cdn.bmwblog.com/wp-content/uploads/2015
 photo24 = Photo.create(photoUrl: "http://st.automobilemag.com/uploads/sites/11/2015/10/2017-Acura-NSX-front-three-quarter-motion3.jpg", year: 2016, color: "blue", car_id: car12.id)
 photo25 = Photo.create(photoUrl: "http://www.canadianautoreview.ca/images/car_photos/2016-dodge-viper-acr/dodge-viper-acr-rs2.jpg", year: 2013, color: "silver", car_id: car13.id)
 photo26 = Photo.create(photoUrl: "http://99dodge.xyz/wp-content/uploads/2016/05/dodge-viper-gts-body-kit-imagepicturegraphicimpressionphotograph.jpg", year: 2010, color: "silver", car_id: car13.id)
-photo27 = Photo.create(photoUrl: " http://st.motortrend.com/uploads/sites/5/2016/03/2016-Lamborghini-Huracan-Spyder-front-three-quarter-02-2.jpg", year: 2017, color: "yellow", car_id: car14.id)
-photo28 = Photo.create(photoUrl: "hhttps://best-wallpaper.net/wallpaper/1920x1440/1412/White-Lamborghini-Huracan-LP610-4-supercar-night-city_1920x1440.jpg", year: 2008, color: "white", car_id: car14.id)
+photo27 = Photo.create(photoUrl: "http://st.motortrend.com/uploads/sites/5/2016/03/2016-Lamborghini-Huracan-Spyder-front-three-quarter-02-2.jpg", year: 2017, color: "yellow", car_id: car14.id)
+photo28 = Photo.create(photoUrl: "http://images.carandbike.com/car-images/gallery/lamborghini/huracan/exterior/lamborghini-huracan-front.jpg", year: 2008, color: "white", car_id: car14.id)
 photo29 = Photo.create(photoUrl: "
 http://files1.porsche.com/filestore/image/multimedia/none/jdp-2016-modelseries-911gt3-editorial-xl/normal/ffdadfa5-8fc7-11e6-9f1b-0019999cd470;sJ/porsche-normal.jpg", year: 2017, color: "red", car_id: car15.id)
 photo30 = Photo.create(photoUrl: "http://s1.cdn.autoevolution.com/images/news/gallery/how-wild-can-a-factory-porsche-911-gt3-rs-get-porsche-exclusive-has-an-answer-photo-gallery_1.jpg", year: 2012, color: "green", car_id: car15.id)
