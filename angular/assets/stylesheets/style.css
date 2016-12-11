@@ -184,22 +184,24 @@ height: 100%;
   flex-wrap: wrap;
 }
 
-.welcomeVid {
-  position: relative;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.welcomeButton {
+  position:absolute;
+  bottom:50%;
+  right:50%;
+  margin: 0px -50px -15px 0px;
+  background: rgba(120,120,120,0.72);
+  box-shadow: 0px 1px 1px -1px gray;
+  font-size: 36px;
+  border-radius:4px;
+  border:1px solid gray;
+  text-shadow:0px 1px 0px black;
 }
 
-/*.welcomeBtn {
-  z-index: 1;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: -500px;
-}*/
+.imgHolder {
+  position:relative;
+  display:inline-block;
+  text-align:center;
+}
 
 .child {
   width: 33.33%;
