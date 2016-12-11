@@ -41,7 +41,7 @@
  <fieldset>
 
  <!-- Form Name -->
- <legend>Submit a Photo</legend>
+ <legend><span class="submitTitle">Submit a Photo</span></legend>
 
  <!-- Text input-->
  <div class="form-group">
@@ -80,9 +80,9 @@
 
  <!-- Button -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="singlebutton">Submit Car: </label>
+  <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button id="singlebutton" name="singlebutton" data-ng-click="vm.save()" class="btn btn-primary">Confirm</button>
+    <button id="singlebutton" class="confirmButton" name="singlebutton" data-ng-click="vm.save()" class="btn btn-primary">Confirm</button>
   </div>
   <!-- <button id="singlebutton"  ng-click="vm.destroyCar()" class="btn btn-primary">Delete Car</button> -->
 </div>
