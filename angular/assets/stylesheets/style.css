@@ -206,9 +206,16 @@ height: 100%;
   position:absolute;
   top:5%;
   left:5%;
-  color: white;
+  color: rgba(226,225,221,.5);
   z-index: 2;
-  font-size: 84px;
+  font-size: 10vw;
+  font-family: 'Quattrocento Sans', sans-serif;
+  /*text-shadow: 2px 2px gray;*/
+}
+
+.homeText:hover {
+  cursor: pointer;
+  color: rgb(224,77,26);
 }
 
 .welcomeButton {
